@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Documentation for the  NavWareSet dataset">
+  <meta property="og:title" content="NavWareSet"/>
+  <meta property="og:description" content="Documentation for the  NavWareSet dataset"/>
+  <meta property="og:url" content="https://anr-navware.github.io/navwareset/"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Social navigation human-robot interaction dataset socially compliant navigation non-compliant navigation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NavWareSet</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    a:hover {
+      text-decoration: underline;
+    }
+    details.expandable {
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      padding: 0.75em 1em;
+      margin-top: 1em;
+      background: #fafafa;
+      transition: box-shadow 0.3s;
+    }
+    details.expandable[open] {
+      box-shadow: 0 2px 6px rgba(10,10,10,0.1);
+    }
+    details.expandable summary {
+      cursor: pointer;
+      font-weight: 600;
+      outline: none;
+      list-style: none;
+    }
+    details.expandable summary::marker {
+      display: none;
+    }
+    details.expandable summary::before {
+      content: "▶ ";
+      display: inline-block;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+    }
+    details.expandable[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.expandable .content {
+      margin-top: 0.75em;
+      padding-left: 1.5em;
+    }
+    /* Responsive video */
+    .responsive-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .responsive-video video,
+    .responsive-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+    /* Responsive image */
+    .responsive-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .is-size-5, .is-size-4, .is-size-3, .is-size-2, .is-size-1 {
+        font-size: 1.1em !important;
+      }
+      .hero-body, .section {
+        padding: 1.5rem 0.5rem;
+      }
+      .columns {
+        flex-direction: column;
+      }
+      .column {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">NavWareSet: A Dataset of Socially Compliant and Non-Compliant Robot Navigation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+               <!--
+              <span class="author-block">
+                
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Johnata Brayan</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Sihao Deng</a><sup>2</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Armando Alves Neto</a><sup>1</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Iaroslav Okunevich</a><sup>2</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Tomas Krajnik</a><sup>3</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Francois Bremond</a><sup>4</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhi Yan</a><sup>2,5</sup></span>
+                  -->
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!--
+                    <span class="author-block">
+                      <sup>1</sup>Universidade Federal de Minas Gerais<br>
+                      <sup>2</sup>Université de technologie de Belfort Montbéliard<br>
+                      <sup>3</sup>Czech Technical University in Prague<br>
+                      <sup>4</sup>Inria<br>
+                      <sup>5</sup>ENSTA - Institut Polytechnique de Paris<br>
+                    </span>
+                  -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://github.com/anr-navware/NavWareSet-Tutorials" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-chalkboard-teacher"></i>
+                        </span>
+                        <span>Tutorials</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="https://search-data.ubfc.fr/FR-13002091000019-2025-05-22" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-download"></i>
+                      </span>
+                      <span>Downloads</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/anr-navware" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Repo</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="responsive-video">
+        <video poster="" id="tree" autoplay controls muted loop>
+          <source src="static/videos/hero_video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h2 class="subtitle has-text-centered" style="margin-top:1em;">
+        <strong>Top-left</strong>: Lidar point cloud of the robot's environment;<br>
+        <strong>Top-right</strong>: Robot's own sensory data;<br>
+        <strong>Bottom-left</strong>: Synced point cloud with pedestrian's positions and robot's pose;<br>
+        <strong>Bottom-right</strong>: Extracted pedestrian and robot trajectories with environment map.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            NavWareSet is a novel dataset designed to advance socially aware robot navigation. It offers multi-modal recordings of socially compliant and non-compliant robot trajectories in realistic indoor scenarios. Using two different robots across seven diverse setups, NavWareSet captures rich human-robot interactions and navigation challenges. With lidar, RGB-D, video, odometry, and annotated human positions, it provides a valuable source for analyzing and training navigation algorithms that prioritize human comfort and safety.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Dataset overview -->
+<section class="hero is-small">
+   <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Overview</h2>
+      <div class="content">
+        <ul>
+          <li>Wide range of social navigation scenarios with both individual and group interactions.</li>
+          <li>Over 192 minutes of interaction data and over 172 minutes of annotated trajectories.</li>
+          <li>Over 1000 individually annotated human tracks and over 600 robot tracks.</li>
+          <li>Sensory data from the perspective of 2 different robots (Toyota HSR and Clearpath Jackal).</li>
+          <li>Stationary Ground-Truth Recording Station (GRS) with video camera and 3D LiDAR scans.</li>
+          <li>Occupancy grid of the obstacles in the environment.</li>
+          <li>Recording of both social and non-social behavior of the robots.</li>
+        </ul>
+
+    </div>
+  </div>
+</section>
+<!-- End dataset overview -->
+
+<!-- Experimental Setup -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Experimental Setup</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+              <!-- Setup section -->
+              <p class="is-size-4 has-text-centered"><strong>Environment</strong></p>
+            <div class="columns is-vcentered is-multiline">
+              <div class="column is-12-mobile is-6-tablet">
+                <!-- add image below-->
+                <img src="static/images/new_setup.png" alt="Experimental Setup" class="responsive-img">
+              </div>
+              <div class="column is-12-mobile is-6-tablet">
+                The dataset was recorded in a broad garage space measuring 3.9 m × 10.7 m with a
+                lateral opening making it possible to elicit tracks in a straight line or around corners.
+                The environment is equipped with a Ground-Truth Recording Station (GRS) that includes a video
+                recorder and a 3D LiDAR scanner. For each scene goal positions were placed around the map according to
+                different social navigation scenarios. The teleoperator (green) and GRS (orange) are on a raised platform. The robot (red) moves centrally, with participants (blue) spread around.
+                Fixed obstacles are shown in gray.
+
+              </div>
+            </div>
+
+            <div class="column is-12">
+                <!-- add image below-->
+                <img src="static/images/setup.png" alt="Experimental Setup" class="responsive-img">
+              </div>
+            <!-- end of Setup section -->
+
+            <!-- Setup section -->
+              <p class="is-size-4 has-text-centered"><br><strong>Ground-Truth Recording Station (GRS)</strong></p>
+            <div class="columns is-multiline">
+              <div class="column is-12-mobile is-6-tablet">
+                <!-- add image below-->
+                <img src="static/images/grs.jpg" alt="Experimental Setup" class="responsive-img">
+              </div>
+              <div class="column is-12-mobile is-6-tablet">
+                <div class="is-flex is-align-items-center" style="height:100%; min-height:300px;">
+                  <div class="responsive-video" style="width:100%;" >
+                    <iframe width="100%" height="100%" title="angel.stl" frameborder="0" allowfullscreen
+                      mozallowfullscreen="true" webkitallowfullscreen="true"
+                      allow="clipboard-write; autoplay; fullscreen; xr-spatial-tracking"
+                      src="https://thangs.com/model/1362968/embed?utm_source=embed"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <br>
+              <p class="has-text-justified has-text-centered">
+                The Ground-Truth Recording Station (GRS) is equipped with an 
+                <a href="https://www.intelrealsense.com/depth-camera-d455/" target="_blank" style="color: #1a0dab;">Intel® RealSense™ Depth Camera D455</a> 
+                and a 
+                <a href="https://cdn.robosense.cn/20200723161715_42428.pdf" target="_blank" style="color: #1a0dab;">Robosense RS-LiDAR-16 3D LiDAR</a>. 
+                Both sensors are mounted on a custom 3D-printed frame, which is positioned on a tripod for stable data collection. 
+                You can interact with the frame in the 3D viewport above (click and drag to rotate) or access the 3D model 
+                <a href="https://thangs.com/designer/johnatabrayan/3d-model/grs.stl-1362968" target="_blank" style="color: #1a0dab;">here</a>.
+              </p>
+              <p class="has-text-justified has-text-centered">
+                To minimize occlusions, the GRS was positioned at a height of 2.17&nbsp;m above the ground. 
+                To enhance the resolution of the LiDAR data, the GRS was tilted 15° downward toward the area of interest.
+              </p>
+            <!-- end of Setup section -->
+
+            <!-- Setup section -->
+              <p class="is-size-4 has-text-centered"><br><strong>Robots</strong></p>
+            <div class="columns is-vcentered is-multiline">
+              <div class="column is-12-mobile is-6-tablet">
+                <!-- add image below-->
+                <img src="static/images/robots.jpg" alt="Experimental Setup" class="responsive-img">
+              </div>
+                <div class="column is-12-mobile is-6-tablet">
+                  The robots used in the NavWareSet dataset are the
+                  <a href="https://clearpathrobotics.com/jackal-small-unmanned-ground-vehicle/" target="_blank" style="color: #1a0dab;">Clearpath Jackal</a> and the
+                  <a href="https://www.toyota-europe.com/news/2018/toyota-expanding-robotics-research-in-europe" target="_blank" style="color: #1a0dab;">Toyota HSR</a>.
+                  The Jackal is a small, rugged robot designed for outdoor and indoor environments, equipped with a 3D LiDAR sensor and an RGB-D camera.
+                  The HSR is a versatile human-support robot capable of performing household tasks, featuring a manipulator arm, a mobile base, and various sensors for safe and intelligent interaction with people and objects.
+                  In most scenarios both robots were teleoperated by a human operator, first in a socially aware manner, and then in a non-aware manner.
+                </div>
+            </div>
+            <!-- Setup section -->
+              <p class="is-size-4 has-text-centered"><br><strong>Experiment description</strong></p>
+            <div class="columns is-multiline">
+              <div class="column is-12">
+                <!-- add image below-->
+                <img src="static/images/scenarios.png" alt="Experimental Setup" class="responsive-img">
+              </div>
+            </div>
+              <br>
+              <p class="has-text-justified has-text-centered">
+                The experiment was designed to capture common social navigation scenarios. These scenarios were proposed by Francis et al. in their paper, <a href="https://arxiv.org/pdf/2306.16740" target="_blank" style="color: #1a0dab;">Principles and Guidelines for Evaluating Social Robot Navigation Algorithms</a>. They serve not only to facilitate data collection but also to provide a standardized basis for evaluating the performance of social navigation algorithms. A detailed description of the scenarios used in NavWareSet is provided in the table below.
+              </p>
+              <details class="expandable">
+                <summary> Show Scenarios Table</summary>
+                <div class="content">
+                  <table border="1" cellpadding="5" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Scenario Name</th>
+                        <th>Scenario Description</th>
+                        <th>Geom. Layout</th>
+                        <th>Scientific Purpose</th>
+                        <th>Robot Task</th>
+                        <th>Human Behavior</th>
+                        <th>Ideal Outcome</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>FRONTAL APPROACH</td>
+                        <td>A pedestrian and robot approach head-on.</td>
+                        <td>Passable Space</td>
+                        <td>Pedestrian Interaction</td>
+                        <td>Navigate A to B</td>
+                        <td>Navigate B to A</td>
+                        <td>Robot / humans pass</td>
+                      </tr>
+                      <tr>
+                        <td>PEDESTRIAN OBSTRUCTION</td>
+                        <td>A pedestrian blocks the robot's path.</td>
+                        <td>Passable Space</td>
+                        <td>Pedestrian Interaction</td>
+                        <td>Navigate A to B</td>
+                        <td>Block path</td>
+                        <td>Robot stops or reroutes</td>
+                      </tr>
+                      <tr>
+                        <td>BLIND CORNER</td>
+                        <td>A robot and human meet at a blind corner.</td>
+                        <td>Corner</td>
+                        <td>Pedestrian Interaction</td>
+                        <td>Navigate A to B</td>
+                        <td>Navigate B to A</td>
+                        <td>No collision / obstruction</td>
+                      </tr>
+                      <tr>
+                        <td>PERPENDICULAR CROSSING</td>
+                        <td>Person moves perpendicular to robot.</td>
+                        <td>Intersection</td>
+                        <td>Pedestrian Interaction</td>
+                        <td>Navigate A to B</td>
+                        <td>Navigate B to A</td>
+                        <td>No collision / obstruction</td>
+                      </tr>
+                      <tr>
+                        <td>FOLLOWING HUMAN</td>
+                        <td>A robot follows a person.</td>
+                        <td>Walking Space</td>
+                        <td>Joint Navigation</td>
+                        <td>Follow human</td>
+                        <td>Lead robot</td>
+                        <td>Robot follows person</td>
+                      </tr>
+                      <tr>
+                        <td>CIRCULAR CROSSING</td>
+                        <td>People and robot move in paths that intersect in the center of a circle</td>
+                        <td>Passable Space</td>
+                        <td>Crowd Navigation</td>
+                        <td>Navigate A to B</td>
+                        <td>Navigate B to A</td>
+                        <td>No collision / smooth flow</td>
+                      </tr>
+
+                      <tr>
+                        <td>OBJECT HANDOVER</td>
+                        <td>A robot hands an object to a human.</td>
+                        <td>Passable Space</td>
+                        <td>Interactive Navigation</td>
+                        <td>Deliver/Receive object</td>
+                        <td>Deliver/Receive object</td>
+                        <td>Human/Robot takes object</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <br>
+              <p class="has-text-justified has-text-centered">
+                In total 17 participants were assigned numbers and divided in 2 groups of 5 and 5 pairs.
+                Each group performed all scenarios but the object handover scenario. All scenarios were recorded for 4 minutes.
+                Most scenarios were performed with both robots, except for the object handover scenario which was only performed with the Toyota HSR.
+                Most scenarios were recorded twice, once with the robot navigating in a socially compliant manner and once in a non-compliant manner.
+                Social behavior adhered to predefined rules (maintaining social distances, avoiding abrupt movements), 
+                while non-social behavior involved direct waypoint-to-waypoint navigation, disregarding human presence.                
+                A detailed description of all recorded scenes used in NavWareSet is provided in the table below.
+              </p>
+              <details class="expandable">
+                <summary> Show Scenes Table</summary>
+                <div class="content">
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <th>N°</th>
+                        <th>Name</th>
+                        <th>Scenario</th>
+                        <th>Robot</th>
+                        <th>Robot Behavior</th>
+                        <th>Group</th>
+                        <th>Participants</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1</td><td>Scene 1</td><td>Frontal Approach</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>2</td><td>Scene 2</td><td>Pedestrian Obstruction</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>3</td><td>Scene 3</td><td>Blind Corner</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>4</td><td>Scene 4</td><td>Following Human</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>5</td><td>Scene 5</td><td>Perpendicular Crossing</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>6</td><td>Scene 6</td><td>Circular Crossing</td><td>HSR</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>7</td><td>Scene 8</td><td>Frontal Approach</td><td>HSR</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>8</td><td>Scene 9</td><td>Pedestrian Obstruction</td><td>HSR</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>9</td><td>Scene 10</td><td>Blind Corner</td><td>HSR</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>10</td><td>Scene 12</td><td>Perpendicular Crossing</td><td>HSR</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>11</td><td>Scene 13</td><td>Circular Crossing</td><td>HSR</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 4, 5</td></tr>
+                      <tr><td>12</td><td>Scene 15</td><td>Frontal Approach</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>13</td><td>Scene 16</td><td>Pedestrian Obstruction</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>14</td><td>Scene 17</td><td>Blind Corner</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>15</td><td>Scene 18</td><td>Following Human</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>16</td><td>Scene 19</td><td>Perpendicular Crossing</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>17</td><td>Scene 20</td><td>Circular Crossing</td><td>Jackal</td><td>Social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>18</td><td>Scene 21</td><td>Frontal Approach</td><td>Jackal</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>19</td><td>Scene 22</td><td>Pedestrian Obstruction</td><td>Jackal</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>20</td><td>Scene 23</td><td>Blind Corner</td><td>Jackal</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>21</td><td>Scene 25</td><td>Perpendicular Crossing</td><td>Jackal</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>22</td><td>Scene 26</td><td>Circular Crossing</td><td>Jackal</td><td>Non-social</td><td>Group 1</td><td>1, 2, 3, 5, 6</td></tr>
+                      <tr><td>23</td><td>Scene 27</td><td>Frontal Approach</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>24</td><td>Scene 28</td><td>Pedestrian Obstruction</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>25</td><td>Scene 29</td><td>Blind Corner</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>26</td><td>Scene 30</td><td>Following Human</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>27</td><td>Scene 31</td><td>Perpendicular Crossing</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>28</td><td>Scene 32</td><td>Circular Crossing</td><td>HSR</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>29</td><td>Scene 34</td><td>Frontal Approach</td><td>HSR</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>30</td><td>Scene 35</td><td>Pedestrian Obstruction</td><td>HSR</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>31</td><td>Scene 36</td><td>Blind Corner</td><td>HSR</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>32</td><td>Scene 38</td><td>Perpendicular Crossing</td><td>HSR</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>33</td><td>Scene 39</td><td>Circular Crossing</td><td>HSR</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>34</td><td>Scene 41</td><td>Frontal Approach</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>35</td><td>Scene 42</td><td>Pedestrian Obstruction</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>36</td><td>Scene 43</td><td>Blind Corner</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>37</td><td>Scene 44</td><td>Following Human</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>38</td><td>Scene 45</td><td>Perpendicular Crossing</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>39</td><td>Scene 46</td><td>Circular Crossing</td><td>Jackal</td><td>Social</td><td>Group 2</td><td>7, 8, 9, 10, 12</td></tr>
+                      <tr><td>40</td><td>Scene 47</td><td>Frontal Approach</td><td>Jackal</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>41</td><td>Scene 49</td><td>Blind Corner</td><td>Jackal</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>42</td><td>Scene 51</td><td>Perpendicular Crossing</td><td>Jackal</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 11</td></tr>
+                      <tr><td>43</td><td>Scene 52</td><td>Circular Crossing</td><td>Jackal</td><td>Non-social</td><td>Group 2</td><td>7, 8, 9, 10, 12</td></tr>
+                      <tr><td>44</td><td>Scene 53</td><td>Object handover</td><td>HSR</td><td>Social</td><td>Pair 1</td><td>2, 8</td></tr>
+                      <tr><td>45</td><td>Scene 54</td><td>Object handover</td><td>HSR</td><td>Social</td><td>Pair 2</td><td>1, 9</td></tr>
+                      <tr><td>46</td><td>Scene 55</td><td>Object handover</td><td>HSR</td><td>Social</td><td>Pair 3</td><td>13, 14</td></tr>
+                      <tr><td>47</td><td>Scene 56</td><td>Object handover</td><td>HSR</td><td>Social</td><td>Pair 4</td><td>4, 15</td></tr>
+                      <tr><td>48</td><td>Scene 57</td><td>Object handover</td><td>HSR</td><td>Social</td><td>Pair 5</td><td>16, 17</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            <!-- end of Setup section -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End experimental setup -->
+
+<!-- Data Pipeline -->
+<section class="hero is-small">
+   <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Data Pipeline</h2>
+      <div class="columns is-vcentered is-multiline">
+        <div class="column is-12-mobile is-6-tablet">
+          <!-- add image below-->
+          <img src="static/images/pipeline.png" alt="Experimental Setup" class="responsive-img">
+        </div>
+          <div class="column is-12-mobile is-6-tablet">
+            <ol style="text-align: justify;">
+              <li>
+                <strong>Experiment Design:</strong> 
+                The pipeline begins with careful planning of social navigation scenarios in a controlled indoor environment.
+                At this step it is defined how robots and human participants will interact in both socially compliant and non-compliant modes.
+                This phase ensures that a diverse set of realistic interactions is captured. 
+              </li>
+              <br>
+              <li>
+                <strong>Data Collection:</strong> 
+                The robots (HSR and Jackal) and a Ground-Truth Recording Station (GRS) simultaneously collect raw sensory data.
+                The robots log LiDAR, RGB-D, stereo vision, IMU, odometry, and velocity commands.
+                Meanwhile, the stationary GRS records the entire scene from an external vantage point, 
+                providing an independent reference for later annotation and validation.
+              </li>
+              <br>
+              <li>
+                <strong>Raw Data Organization:</strong> 
+                All recorded sensor data is saved in ROS bag files.
+                Each scene’s raw data is packaged into separate files for the robot and the GRS.
+                This organized structure allows researchers to easily replay the scenarios and verify the consistency of recorded sensor streams.
+              </li>
+              <br>
+              <li>
+                <strong>Data Processing:</strong> 
+                The raw data undergoes processing.
+                Robot poses are extracted using SLAM.
+                Human participant positions are manually annotated frame-by-frame using the CVAT tool applied to the GRS point cloud.
+                This ensures accurate human trajectory labeling, crucial for studying robot social navigation behavior.
+                All CVAT annotations were saved using the Supervisely format.
+              </li>
+              <br>
+              <li>
+                <strong>Data Product Generation:</strong> 
+                After processing, clean and usable data products are created for each scene:
+                <ul style="margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 1.5em; list-style-type: disc;">
+                  <li>Annotated point clouds synchronized with robot poses.</li>
+                  <li>Robot and participant positions in easily accessible CSV files.</li>
+                  <li>Occupancy grids detailing static obstacles.</li>
+                  <li>All metadata and calibration offsets are packaged to ensure reproducibility.</li>
+                </ul>
+                These structured files make the dataset valuable for training, benchmarking, and testing navigation algorithms.
+              </li>
+              <br>
+              <li>
+                <strong>Distribution:</strong> 
+                The complete, organized dataset — including raw bags, annotations, CSVs, and occupancy grids — is shared publicly.
+                A series of tutorials and helper scripts are provided to assist researchers in using the dataset effectively.
+                The dataset is designed to be user-friendly, with clear documentation on how to access and utilize
+                the data for various research purposes.
+                Researchers can access everything through the
+                <a href="https://anr-navware.github.io/navwareset/" target="_blank">NavWareSet website</a> and the
+                <a href="https://github.com/anr-navware" target="_blank">NavWare GitHub repository</a>.
+                All data can be downloaded in bulk or individually using the 
+                <a href="https://search-data.ubfc.fr/FR-13002091000019-2025-05-22" target="_blank">dat@UBFC</a> website.
+              </li>
+            </ol>
+
+            <!-- <h3>✅ Summary</h3>
+            <p>
+              This pipeline ensures that NavWareSet is not just raw data, but a high-quality, well-documented resource
+              designed to push forward research in robot social compliance and navigation in human environments.
+            </p> -->
+        </div>
+      </div>
+  </div>
+</section>
+<!-- End Data Pipeline -->
+
+<!-- Data Overview -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Data Overview</h2>
+        <p> 
+          Each scene is divided into four files, each containing its own data. 
+          All files start with the number of its respective scene name.
+        </p>
+        <p>
+          For generic scene "x" we have the following files:
+        </p>
+          <!-- add Expandable section below -->
+          <details class="expandable">
+            <summary> x_robot.zip</summary>
+            <div class="content">
+              <p>The zipped ROS bag with the raw data from the robot.</p>
+              <p>The available ROS topics for scenes with the <strong>HSR</strong> are:</p>
+              <ul>
+                <li>/hsrb/head_rgbd_sensor/rgb/camera_info</li>
+                <li>/hsrb/head_rgbd_sensor/rgb/image_rect_color</li>
+                <li>/hsrb/command_velocity</li>
+                <li>/hsrb/head_l_stereo_camera/image_raw</li>
+                <li>/hsrb/head_rgbd_sensor/depth_registered/camera_info</li>
+                <li>/static_obstacle_ros_map</li>
+                <li>/hsrb/head_l_stereo_camera/camera_info</li>
+                <li>/hsrb/head_r_stereo_camera/camera_info</li>
+                <li>/hsrb/head_rgbd_sensor/depth_registered/rectified_points</li>
+                <li>/tf</li>
+                <li>/hsrb/head_r_stereo_camera/image_raw</li>
+                <li>/hsrb/base_scan</li>
+                <li>/hsrb/head_rgbd_sensor/depth_registered/image_rect_raw</li>
+                <li>/tf_static</li>
+                <li>/dynamic_obstacle_map</li>
+              </ul>
+              <p>The available ROS topics for scenes with the <strong>Jackal</strong> are:</p>
+              <ul>
+                <li>/amcl_pose</li>
+                <li>/camera/color/image_raw</li>
+                <li>/map</li>
+                <li>/tf</li>
+                <li>/rslidar_points</li>
+                <li>/camera/color/camera_info</li>
+                <li>/cmd_vel</li>
+              </ul>
+            </div>
+          </details>
+          <!-- end of Expandable section -->
+          <!-- add Expandable section below -->
+          <details class="expandable">
+            <summary> x_grs.zip</summary>
+            <div class="content">
+              <p>The zipped ROS bag with the raw data from the Ground-Truth Recording Station (GRS).</p>
+              <p>The available ROS topics are:</p>
+              <ul>
+                <li>/camera/color/image_raw</li>
+                <li>/rslidar_points</li>
+                <li>/camera/color/camera_info</li>
+              </ul>      
+            </div>
+          </details>
+          <!-- end of Expandable section -->
+          <!-- add Expandable section below -->
+          <details class="expandable">
+            <summary> x_annotated.zip</summary>
+            <div class="content">
+              <p>The zipped folder containing annotated filtered point cloud, synchronized with the robot’s poses for scene x,
+                 organized following the structure below:</p>
+              <code>
+                x_annotated/<br>
+                ├── scene_x/<br>
+                │&nbsp;&nbsp;&nbsp;├── pointcloud/<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── 1717330243.123456789.pcd<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── 1717330244.123456789.pcd<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── ...<br>
+                │&nbsp;&nbsp;&nbsp;├── ann/<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── 1717330243.123456789.json<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── 1717330244.123456789.json<br>
+                │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── ...<br>
+                ├── x_robot_pose.csv<br>
+                ├── x_grs_to_bot_offset.json<br>
+                ├── x_occupancy_xy_points.json<br>
+                ├── meta.json<br>
+                └── key_id_map.json<br>
+              </code>
+            </div>
+          </details>
+          <!-- end of Expandable section -->
+          <!-- add Expandable section below -->
+          <details class="expandable  ">
+            <summary> x_poses.zip</summary>
+            <div class="content">
+              <p>The zipped folder containing participant and robot positions with the occupancy grid of the obstacles in scene x, 
+                organized following the structure below:</p>
+              <code>
+                x_poses/<br>
+                ├── x_occupancy_xy_points.json<br>
+                └── x_robot_and_participants.csv<br>
+              </code>
+              <br>
+              <p>The CSV file with the robot poses and the position of the participants follows the pattern below:</p>
+                <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                  <tr>
+                  <th>timestamp</th>
+                  <th>robot_x</th>
+                  <th>robot_y</th>
+                  <th>robot_yaw_rad</th>
+                  <th>x1</th>
+                  <th>y1</th>
+                  <th>x2</th>
+                  <th>y2</th>
+                  <th>x3</th>
+                  <th>y3</th>
+                  <th>x4</th>
+                  <th>y4</th>
+                  <th>x5</th>
+                  <th>y5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  <td>1730220611292458240</td>
+                  <td>2.7051</td>
+                  <td>-0.8938</td>
+                  <td>-0.0046</td>
+                  <td>1.4400</td>
+                  <td>0.5500</td>
+                  <td>0.6800</td>
+                  <td>-1.1600</td>
+                  <td>10.6500</td>
+                  <td>0.1800</td>
+                  <td>11.0900</td>
+                  <td>-1.5600</td>
+                  <td>10.9200</td>
+                  <td>-2.6500</td>
+                  </tr>
+                  <tr>
+                  <td>1730220611392471296</td>
+                  <td>2.7051</td>
+                  <td>-0.8938</td>
+                  <td>-0.0046</td>
+                  <td>1.4300</td>
+                  <td>0.5500</td>
+                  <td>0.6800</td>
+                  <td>-1.1600</td>
+                  <td>10.6500</td>
+                  <td>0.1800</td>
+                  <td>11.0900</td>
+                  <td>-1.5600</td>
+                  <td>10.9200</td>
+                  <td>-2.6500</td>
+                  </tr>
+                  <tr>
+                  <td>1730220611492328448</td>
+                  <td>2.7051</td>
+                  <td>-0.8938</td>
+                  <td>-0.0046</td>
+                  <td>1.4300</td>
+                  <td>0.5500</td>
+                  <td>0.6800</td>
+                  <td>-1.1600</td>
+                  <td>10.6500</td>
+                  <td>0.1800</td>
+                  <td>11.0900</td>
+                  <td>-1.5600</td>
+                  <td>10.9200</td>
+                  <td>-2.6500</td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+          </details>
+          <!-- end of Expandable section -->
+          <br>
+          <p>
+            Scenes 53 to 57 don't have person position annotation because the participants don't walk around the environment;
+            only the robot moves between the participants.
+          </p>
+    </div>
+  </div>
+</section>
+<!-- End Data Overview -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>BibTex Code Here Soon...</code></pre>
+    </div>
+  </section>
+<!--End BibTex citation -->
+
+<!-- Authors -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Authors</h2>
+        <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+               
+              <span class="author-block">
+                
+                <a href="https://capynetics.github.io/" target="_blank">Johnata Brayan</a><sup>1,2</sup>,</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/sihao-deng-349528b0/?originalSubdomain=fr" target="_blank">Sihao Deng</a><sup>2</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/armando-alves-neto-0b355147/" target="_blank">Armando Alves Neto</a><sup>1</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/iaroslav-okunevich-61b838205/?originalSubdomain=de" target="_blank">Iaroslav Okunevich</a><sup>2</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-krajn%C3%ADk-91a49a7/?originalSubdomain=cz" target="_blank">Tomas Krajnik</a><sup>3</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www-sop.inria.fr/teams/pulsar/personnel/Francois.Bremond/" target="_blank">Francois Bremond</a><sup>4</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://yzrobot.github.io/" target="_blank">Zhi Yan</a><sup>2,5</sup></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>Universidade Federal de Minas Gerais<br>
+                      <sup>2</sup>Université de technologie de Belfort Montbéliard<br>
+                      <sup>3</sup>Czech Technical University in Prague<br>
+                      <sup>4</sup>Inria<br>
+                      <sup>5</sup>ENSTA - Institut Polytechnique de Paris<br>
+                    </span>
+                  </div>
+                  </div>
+      </div>
+  </div>
+</section>
+<!-- End of Authors section-->
+
+<!-- Funding -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Funding</h2>
+     <div class="columns is-vcentered is-multiline">
+              <div class="column is-12-mobile is-4-tablet has-text-centered">
+                <img src="static/images/Logo-ANR-300x300.png" alt="Experimental Setup" style="width: 60%; height: auto; border-radius: 8px;">
+              </div>
+              <div class="column is-12-mobile is-8-tablet">
+                This project has received funding from the French National Research Agency (ANR) under grant agreement No ANR-23-CE10-0016.
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+<!-- End of funding section-->
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+              <p>
+                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+</html>
