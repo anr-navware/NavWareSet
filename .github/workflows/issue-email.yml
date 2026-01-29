@@ -13,6 +13,7 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
+          secure: false
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "New issue opened: #${{ github.event.issue.number }}"
@@ -21,5 +22,5 @@ jobs:
             Title: ${{ github.event.issue.title }}
             Author: ${{ github.event.issue.user.login }}
             URL: ${{ github.event.issue.html_url }}
-          to: your_email@example.com
-          from: GitHub Issues Bot
+          to: your_email@gmail.com
+          from: GitHub Issues Bot <your_email@gmail.com>
