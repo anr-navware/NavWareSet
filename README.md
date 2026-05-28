@@ -10,13 +10,14 @@
 ## Citation
 If you are considering using this code, please reference the following:
 ```bibtex
-@article{brayan:hal-05231729,
-  title = {{NavWareSet}: A Dataset of Socially Compliant and Non-Compliant Robot Navigation},
-  author = {Brayan, Johnata and Deng, Sihao and Alves Neto, Armando and Okunevich, Iaroslav and Krajnik, Tomas and Bremond, Francois and Yan, Zhi},
-  journal = {HAL},
-  volume = {hal-05231729},
-  number = {},
-  pages={},
-  year={2025}
+@article{Brayan26IJRR,
+  title        = {NavWareSet: A Dataset of Socially Compliant and Non-Compliant Robot Navigation},
+  author       = {Brayan, Johnata and Deng, S. and Alves Neto, Armando and Okunevich, Iaroslav and Krajnik, Tomas and Bremond, Francois and Yan, Zhi},
+  journal      = {International Journal of Robotics Research},
+  volume       = {0},
+  number       = {0},
+  pages        = {1--15},
+  year         = {2026},
+  doi          = {10.1177/02783649261447305}
 }
 ```
