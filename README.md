@@ -1,6 +1,6 @@
 # NavWareSet: A Dataset of Socially Compliant and Non-Compliant Robot Navigation
 
-- :book: [Paper](https://hal.science/view/index/docid/5231729)
+- :book: [Paper](https://hal.science/hal-05231729v2)
 - :camera: [Data](https://search-data.ubfc.fr/FR-13002091000019-2025-05-22)
 - :school: [Tutorial](https://github.com/anr-navware/NavWareSet-Tutorials)
 - :running_shirt_with_sash: [Example](https://github.com/anr-navware/NavWareSet-SFM)
