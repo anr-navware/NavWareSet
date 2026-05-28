@@ -8,11 +8,12 @@
 ## If you have any questions, please open an issue. Thanks!
 
 ## Citation
-If you are considering using this code, please reference the following:
+
+If you are considering using this dataset, please cite the following:
 ```bibtex
 @article{Brayan26IJRR,
   title        = {NavWareSet: A Dataset of Socially Compliant and Non-Compliant Robot Navigation},
-  author       = {Brayan, Johnata and Deng, S. and Alves Neto, Armando and Okunevich, Iaroslav and Krajnik, Tomas and Bremond, Francois and Yan, Zhi},
+  author       = {Johnata Brayan and Sihao Deng and Armando Alves Neto and Iaroslav Okunevich and Tomas Krajnik and Francois Bremond and Zhi Yan},
   journal      = {International Journal of Robotics Research},
   volume       = {0},
   number       = {0},
